@@ -1,0 +1,23 @@
+api_article_get:
+    path:  /article/{id}
+    defaults: { _controller: 'AppBundle:Article:get' }
+    requirements:
+        id: \d+
+    methods: [GET]
+    
+api_article_add:
+    path:  /article
+    defaults: { _controller: 'AppBundle:Article:add' }
+    methods: [POST]
+    
+api_autor_get:
+    path:  /autor/{id}
+    defaults: { _controller: 'AppBundle:Autor:get' }
+    requirements:
+        id: \d+
+    methods: [GET]
+    
+api_autor_add:
+    path:  /autor
+    defaults: { _controller: 'AppBundle:Autor:add' }
+    methods: [POST]

@@ -1,0 +1,24 @@
+services:
+    
+    service_abstract:
+        class: AppBundle\Service\AbstractService
+        abstract: true
+        calls:
+            - [ setEM, [ @doctrine.orm.entity_manager ] ]
+    
+    service_article:
+        class: AppBundle\Service\ArticleService
+        parent: service_abstract
+        calls:
+            - [ setAutorService, [ @service_autor ] ]
+            - [ setValidator, [ @validator ] ]
+        
+    service_autor:
+        class: AppBundle\Service\AutorService
+        parent: service_abstract
+        
+    validator.autor_exist:
+        class: AppBundle\Validator\Constraints\AutorExistValidator
+        arguments: [ @doctrine.orm.entity_manager ]
+        tags:
+            - { name: validator.constraint_validator, alias: validator.autor_exist }
