@@ -31,6 +31,6 @@ method : GET
 Ajouter un article :
 
 url : article
-paramètre : title, content, publicationDate, autorId (case sensitive)
+paramètres : title, content, publicationDate, autorId (case sensitive)
 method : POST
 
