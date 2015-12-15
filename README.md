@@ -34,5 +34,3 @@ url : article
 paramètre : title, content, publicationDate, autorId (case sensitive)
 method : POST
 
-
-A Symfony project created on December 15, 2015, 10:54 am.
